@@ -3,5 +3,10 @@ public class LaunchGame {
          TicTacToe  t = new TicTacToe();
          t.displayBoard();
 
+
+
+        System.out.println(t.checkDiagonalWin());
+        System.out.println(t.checkColumnWin());
+        System.out.println(t.checkRowWin());
     }
 }
