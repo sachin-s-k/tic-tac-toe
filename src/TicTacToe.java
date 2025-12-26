@@ -1,5 +1,5 @@
 public class TicTacToe {
-    char [][] board;
+    static char [][] board;
     public TicTacToe() {
        board= new char [3][3];
        initializeBoard();
