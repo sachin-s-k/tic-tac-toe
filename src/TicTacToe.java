@@ -11,7 +11,7 @@ public class TicTacToe {
             }
         }
     }
-    public void displayBoard(){
+    public static void displayBoard(){
    System.out.println("-------------");
         for(int i=0;i< board.length;i++){
             System.out.print("| ");
@@ -26,7 +26,7 @@ public class TicTacToe {
 
     }
 
-    public void placeMark(int row, int col, char mark){
+  static void placeMark(int row, int col, char mark){
         if(row>=0&&row<=2&&col>=0&&col<=2){
             board [row][col]= mark;
         }else{
@@ -37,7 +37,7 @@ public class TicTacToe {
     }
 
 
-    public boolean checkColumnWin(){
+    public static  boolean checkColumnWin(){
 
         for(int j=0;j< board.length;j++) {
             if (board[0][j] !=' '&& board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
@@ -48,7 +48,7 @@ public class TicTacToe {
 
         return  false;
     }
-    public  boolean checkRowWin(){
+    public static  boolean checkRowWin(){
         for (int j=0;j<board.length;j++){
             if(board[j][0]!=' '&&board[j][0]==board[j][1]&&board[j][1]==board[j][2]){
                 return true;
@@ -59,13 +59,25 @@ public class TicTacToe {
         return false;
     }
 
-    public  boolean checkDiagonalWin(){
+    public static boolean checkDiagonalWin(){
 
           if(board[0][0]!=' ' && board[0][0]==board[1][1]&&board[1][1]==board[2][2]||board[0][2]!=' '&&board[0][2]==board[1][1]&&board[1][1]==board[2][2]){
               return true;
         }
 
         return false;
+    }
+
+    public static boolean checkDraw(){
+        for(int j=0;j<board.length;j++){
+            for(int k=0;k<board[j].length;k++){
+                if(board[j][k]==' '){
+                    return true;
+                }
+            }
+
+        }
+        return  false;
     }
 
 
